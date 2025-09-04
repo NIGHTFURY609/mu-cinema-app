@@ -1,6 +1,6 @@
 ## Project info
 
-**URL**: 
+**URL**: https://mu-cinema-app.vercel.app/
 
 ## How can I edit this code?
 
