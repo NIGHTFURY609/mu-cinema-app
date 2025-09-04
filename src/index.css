@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cinema-themed design system with rich colors and gradients */
+
+@layer base {
+  :root {
+    /* Cinema Dark Theme */
+    --background: 220 13% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 13% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 13% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 45 100% 70%;
+    --primary-foreground: 220 13% 8%;
+
+    --secondary: 220 13% 16%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 13% 16%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 0 84% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 16%;
+    --input: 220 13% 16%;
+    --ring: 45 100% 70%;
+
+    --radius: 0.75rem;
+
+    /* Custom Cinema Colors */
+    --cinema-gold: 45 100% 70%;
+    --cinema-red: 0 84% 60%;
+    --cinema-dark: 220 13% 8%;
+    --cinema-darker: 220 13% 5%;
+    --cinema-card: 220 13% 12%;
+    --cinema-card-hover: 220 13% 16%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 13% 8%), hsl(220 13% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(220 13% 12%), hsl(220 13% 10%));
+    --gradient-primary: linear-gradient(135deg, hsl(45 100% 70%), hsl(35 100% 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(0 84% 60%), hsl(350 84% 55%));
+    
+    /* Shadows */
+    --shadow-card: 0 8px 32px hsla(220, 13%, 4%, 0.6);
+    --shadow-card-hover: 0 16px 48px hsla(220, 13%, 4%, 0.8);
+    --shadow-primary: 0 8px 32px hsla(45, 100%, 70%, 0.3);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode uses the same cinema theme */
+    --background: hsl(var(--cinema-dark));
+    --foreground: hsl(var(--foreground));
+    --card: hsl(var(--cinema-card));
+    --card-foreground: hsl(var(--foreground));
+    --popover: hsl(var(--cinema-card));
+    --popover-foreground: hsl(var(--foreground));
+    --primary: hsl(var(--cinema-gold));
+    --primary-foreground: hsl(var(--cinema-dark));
+    --secondary: hsl(var(--cinema-card-hover));
+    --secondary-foreground: hsl(var(--foreground));
+    --muted: hsl(var(--cinema-card-hover));
+    --muted-foreground: hsl(var(--muted-foreground));
+    --accent: hsl(var(--cinema-red));
+    --accent-foreground: hsl(var(--foreground));
+    --destructive: hsl(var(--cinema-red));
+    --destructive-foreground: hsl(var(--foreground));
+    --border: hsl(var(--cinema-card-hover));
+    --input: hsl(var(--cinema-card-hover));
+    --ring: hsl(var(--cinema-gold));
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom utility classes for cinema theme */
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  .shadow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+  
+  .text-cinema-gold {
+    color: hsl(var(--cinema-gold));
+  }
+  
+  .text-cinema-red {
+    color: hsl(var(--cinema-red));
+  }
+  
+  .bg-cinema-card {
+    background-color: hsl(var(--cinema-card));
+  }
+  
+  .bg-cinema-card-hover {
+    background-color: hsl(var(--cinema-card-hover));
+  }
+  
+  .movie-card-hover {
+    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-card-hover;
+  }
+  
+  .search-glow {
+    @apply focus:ring-2 focus:ring-primary/50 focus:border-primary;
+  }
+}
